@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :users
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
+  # devise_for :user, path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'signup' }
+  # mount RailsAdmin::Engine => '', as: 'rails_admin'
+
   resources :illuminance_logs
 
   resources :temperature_logs
@@ -23,7 +28,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-
+  root 'schools#index'
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
