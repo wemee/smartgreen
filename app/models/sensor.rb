@@ -6,5 +6,5 @@ class Sensor < ActiveRecord::Base
   has_many :humidity_logs
   has_many :air_quality_logs
   has_many :temperature_logs
-  has_many :lluminance_logs
+  has_many :illuminance_logs
 end
