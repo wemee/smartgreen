@@ -21,5 +21,11 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: mysql2
+  encoding: utf8 #utf8 只能3byte編碼，utf8mb4 可以4byte編碼
+  database: opendata
+  username: 'admin'
+  password: '01517124'
+  host: '127.0.0.1'
+  #port: 3306
+  #  #pool: 50 #執行序數
