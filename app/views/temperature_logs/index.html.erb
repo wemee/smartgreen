@@ -1,0 +1,29 @@
+<h1>Listing temperature_logs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sensor</th>
+      <th>Value</th>
+      <th>Date time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @temperature_logs.each do |temperature_log| %>
+      <tr>
+        <td><%= temperature_log.sensor %></td>
+        <td><%= temperature_log.value %></td>
+        <td><%= temperature_log.date_time %></td>
+        <td><%= link_to 'Show', temperature_log %></td>
+        <td><%= link_to 'Edit', edit_temperature_log_path(temperature_log) %></td>
+        <td><%= link_to 'Destroy', temperature_log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Temperature log', new_temperature_log_path %>

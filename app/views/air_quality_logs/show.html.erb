@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sensor:</strong>
+  <%= @air_quality_log.sensor %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @air_quality_log.value %>
+</p>
+
+<p>
+  <strong>Date time:</strong>
+  <%= @air_quality_log.date_time %>
+</p>
+
+<%= link_to 'Edit', edit_air_quality_log_path(@air_quality_log) %> |
+<%= link_to 'Back', air_quality_logs_path %>

@@ -1,0 +1,2 @@
+module TemperatureLogsHelper
+end

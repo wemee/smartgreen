@@ -1,0 +1,2 @@
+module HumidityLogsHelper
+end

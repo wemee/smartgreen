@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sensor:</strong>
+  <%= @ai_plug_log.sensor %>
+</p>
+
+<p>
+  <strong>Outlet:</strong>
+  <%= @ai_plug_log.outlet_id %>
+</p>
+
+<p>
+  <strong>Attrid val:</strong>
+  <%= @ai_plug_log.attrid_val %>
+</p>
+
+<p>
+  <strong>Date time:</strong>
+  <%= @ai_plug_log.date_time %>
+</p>
+
+<p>
+  <strong>User name:</strong>
+  <%= @ai_plug_log.user_name %>
+</p>
+
+<p>
+  <strong>Device:</strong>
+  <%= @ai_plug_log.device %>
+</p>
+
+<p>
+  <strong>Install time:</strong>
+  <%= @ai_plug_log.install_time %>
+</p>
+
+<p>
+  <strong>Standby watt:</strong>
+  <%= @ai_plug_log.standby_watt %>
+</p>
+
+<%= link_to 'Edit', edit_ai_plug_log_path(@ai_plug_log) %> |
+<%= link_to 'Back', ai_plug_logs_path %>

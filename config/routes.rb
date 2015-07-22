@@ -1,4 +1,22 @@
 Rails.application.routes.draw do
+  resources :illuminance_logs
+
+  resources :temperature_logs
+
+  resources :air_quality_logs
+
+  resources :humidity_logs
+
+  resources :ai_plug_logs
+
+  resources :sensors
+
+  resources :types
+
+  resources :rooms
+
+  resources :schools
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

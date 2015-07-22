@@ -1,0 +1,29 @@
+<h1>Listing humidity_logs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sensor</th>
+      <th>Value</th>
+      <th>Date time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @humidity_logs.each do |humidity_log| %>
+      <tr>
+        <td><%= humidity_log.sensor %></td>
+        <td><%= humidity_log.value %></td>
+        <td><%= humidity_log.date_time %></td>
+        <td><%= link_to 'Show', humidity_log %></td>
+        <td><%= link_to 'Edit', edit_humidity_log_path(humidity_log) %></td>
+        <td><%= link_to 'Destroy', humidity_log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Humidity log', new_humidity_log_path %>

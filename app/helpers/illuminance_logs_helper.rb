@@ -1,0 +1,2 @@
+module IlluminanceLogsHelper
+end

@@ -1,0 +1,29 @@
+<h1>Listing illuminance_logs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sensor</th>
+      <th>Value</th>
+      <th>Date time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @illuminance_logs.each do |illuminance_log| %>
+      <tr>
+        <td><%= illuminance_log.sensor %></td>
+        <td><%= illuminance_log.value %></td>
+        <td><%= illuminance_log.date_time %></td>
+        <td><%= link_to 'Show', illuminance_log %></td>
+        <td><%= link_to 'Edit', edit_illuminance_log_path(illuminance_log) %></td>
+        <td><%= link_to 'Destroy', illuminance_log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Illuminance log', new_illuminance_log_path %>

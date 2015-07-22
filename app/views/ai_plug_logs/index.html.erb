@@ -1,0 +1,39 @@
+<h1>Listing ai_plug_logs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sensor</th>
+      <th>Outlet</th>
+      <th>Attrid val</th>
+      <th>Date time</th>
+      <th>User name</th>
+      <th>Device</th>
+      <th>Install time</th>
+      <th>Standby watt</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ai_plug_logs.each do |ai_plug_log| %>
+      <tr>
+        <td><%= ai_plug_log.sensor %></td>
+        <td><%= ai_plug_log.outlet_id %></td>
+        <td><%= ai_plug_log.attrid_val %></td>
+        <td><%= ai_plug_log.date_time %></td>
+        <td><%= ai_plug_log.user_name %></td>
+        <td><%= ai_plug_log.device %></td>
+        <td><%= ai_plug_log.install_time %></td>
+        <td><%= ai_plug_log.standby_watt %></td>
+        <td><%= link_to 'Show', ai_plug_log %></td>
+        <td><%= link_to 'Edit', edit_ai_plug_log_path(ai_plug_log) %></td>
+        <td><%= link_to 'Destroy', ai_plug_log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ai plug log', new_ai_plug_log_path %>

@@ -1,0 +1,49 @@
+<%= form_for(@ai_plug_log) do |f| %>
+  <% if @ai_plug_log.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ai_plug_log.errors.count, "error") %> prohibited this ai_plug_log from being saved:</h2>
+
+      <ul>
+      <% @ai_plug_log.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :sensor_id %><br>
+    <%= f.text_field :sensor_id %>
+  </div>
+  <div class="field">
+    <%= f.label :outlet_id %><br>
+    <%= f.number_field :outlet_id %>
+  </div>
+  <div class="field">
+    <%= f.label :attrid_val %><br>
+    <%= f.text_field :attrid_val %>
+  </div>
+  <div class="field">
+    <%= f.label :date_time %><br>
+    <%= f.datetime_select :date_time %>
+  </div>
+  <div class="field">
+    <%= f.label :user_name %><br>
+    <%= f.text_field :user_name %>
+  </div>
+  <div class="field">
+    <%= f.label :device %><br>
+    <%= f.text_field :device %>
+  </div>
+  <div class="field">
+    <%= f.label :install_time %><br>
+    <%= f.datetime_select :install_time %>
+  </div>
+  <div class="field">
+    <%= f.label :standby_watt %><br>
+    <%= f.text_field :standby_watt %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

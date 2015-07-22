@@ -1,0 +1,2 @@
+module AiPlugLogsHelper
+end

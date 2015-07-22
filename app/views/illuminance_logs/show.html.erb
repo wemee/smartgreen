@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sensor:</strong>
+  <%= @illuminance_log.sensor %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @illuminance_log.value %>
+</p>
+
+<p>
+  <strong>Date time:</strong>
+  <%= @illuminance_log.date_time %>
+</p>
+
+<%= link_to 'Edit', edit_illuminance_log_path(@illuminance_log) %> |
+<%= link_to 'Back', illuminance_logs_path %>

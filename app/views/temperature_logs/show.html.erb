@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sensor:</strong>
+  <%= @temperature_log.sensor %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @temperature_log.value %>
+</p>
+
+<p>
+  <strong>Date time:</strong>
+  <%= @temperature_log.date_time %>
+</p>
+
+<%= link_to 'Edit', edit_temperature_log_path(@temperature_log) %> |
+<%= link_to 'Back', temperature_logs_path %>
