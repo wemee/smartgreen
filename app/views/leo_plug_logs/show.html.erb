@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sensor:</strong>
+  <%= @leo_plug_log.sensor %>
+</p>
+
+<p>
+  <strong>Outlet:</strong>
+  <%= @leo_plug_log.outlet_id %>
+</p>
+
+<p>
+  <strong>Date time:</strong>
+  <%= @leo_plug_log.date_time %>
+</p>
+
+<p>
+  <strong>Device:</strong>
+  <%= @leo_plug_log.device %>
+</p>
+
+<p>
+  <strong>Standby watt:</strong>
+  <%= @leo_plug_log.standby_watt %>
+</p>
+
+<p>
+  <strong>Voltage:</strong>
+  <%= @leo_plug_log.voltage %>
+</p>
+
+<p>
+  <strong>Amp:</strong>
+  <%= @leo_plug_log.amp %>
+</p>
+
+<p>
+  <strong>Power:</strong>
+  <%= @leo_plug_log.power %>
+</p>
+
+<p>
+  <strong>Energy:</strong>
+  <%= @leo_plug_log.energy %>
+</p>
+
+<p>
+  <strong>Power on off:</strong>
+  <%= @leo_plug_log.power_on_off %>
+</p>
+
+<p>
+  <strong>Reactive power:</strong>
+  <%= @leo_plug_log.reactive_power %>
+</p>
+
+<%= link_to 'Edit', edit_leo_plug_log_path(@leo_plug_log) %> |
+<%= link_to 'Back', leo_plug_logs_path %>

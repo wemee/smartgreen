@@ -1,0 +1,45 @@
+<h1>Listing leo_plug_logs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sensor</th>
+      <th>Outlet</th>
+      <th>Date time</th>
+      <th>Device</th>
+      <th>Standby watt</th>
+      <th>Voltage</th>
+      <th>Amp</th>
+      <th>Power</th>
+      <th>Energy</th>
+      <th>Power on off</th>
+      <th>Reactive power</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @leo_plug_logs.each do |leo_plug_log| %>
+      <tr>
+        <td><%= leo_plug_log.sensor %></td>
+        <td><%= leo_plug_log.outlet_id %></td>
+        <td><%= leo_plug_log.date_time %></td>
+        <td><%= leo_plug_log.device %></td>
+        <td><%= leo_plug_log.standby_watt %></td>
+        <td><%= leo_plug_log.voltage %></td>
+        <td><%= leo_plug_log.amp %></td>
+        <td><%= leo_plug_log.power %></td>
+        <td><%= leo_plug_log.energy %></td>
+        <td><%= leo_plug_log.power_on_off %></td>
+        <td><%= leo_plug_log.reactive_power %></td>
+        <td><%= link_to 'Show', leo_plug_log %></td>
+        <td><%= link_to 'Edit', edit_leo_plug_log_path(leo_plug_log) %></td>
+        <td><%= link_to 'Destroy', leo_plug_log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Leo plug log', new_leo_plug_log_path %>

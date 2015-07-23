@@ -1,0 +1,61 @@
+<%= form_for(@leo_plug_log) do |f| %>
+  <% if @leo_plug_log.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@leo_plug_log.errors.count, "error") %> prohibited this leo_plug_log from being saved:</h2>
+
+      <ul>
+      <% @leo_plug_log.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :sensor_id %><br>
+    <%= f.text_field :sensor_id %>
+  </div>
+  <div class="field">
+    <%= f.label :outlet_id %><br>
+    <%= f.number_field :outlet_id %>
+  </div>
+  <div class="field">
+    <%= f.label :date_time %><br>
+    <%= f.datetime_select :date_time %>
+  </div>
+  <div class="field">
+    <%= f.label :device %><br>
+    <%= f.text_field :device %>
+  </div>
+  <div class="field">
+    <%= f.label :standby_watt %><br>
+    <%= f.text_field :standby_watt %>
+  </div>
+  <div class="field">
+    <%= f.label :voltage %><br>
+    <%= f.text_field :voltage %>
+  </div>
+  <div class="field">
+    <%= f.label :amp %><br>
+    <%= f.text_field :amp %>
+  </div>
+  <div class="field">
+    <%= f.label :power %><br>
+    <%= f.text_field :power %>
+  </div>
+  <div class="field">
+    <%= f.label :energy %><br>
+    <%= f.text_field :energy %>
+  </div>
+  <div class="field">
+    <%= f.label :power_on_off %><br>
+    <%= f.check_box :power_on_off %>
+  </div>
+  <div class="field">
+    <%= f.label :reactive_power %><br>
+    <%= f.text_field :reactive_power %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
