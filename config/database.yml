@@ -23,7 +23,7 @@ test:
 production:
   adapter: mysql2
   encoding: utf8 #utf8 只能3byte編碼，utf8mb4 可以4byte編碼
-  database: opendata
+  database: smartgreen
   username: 'root'
   password: '01517124'
   host: '127.0.0.1'
