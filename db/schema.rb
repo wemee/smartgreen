@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150723035133) do
+ActiveRecord::Schema.define(version: 20150723052935) do
 
   create_table "ai_plug_logs", force: true do |t|
     t.integer  "sensor_id"
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 20150723035133) do
 
   create_table "leo_plug_logs", force: true do |t|
     t.integer  "sensor_id"
-    t.integer  "outlet_id"
+    t.string   "outlet_id"
     t.datetime "date_time"
     t.string   "device"
     t.float    "standby_watt"
