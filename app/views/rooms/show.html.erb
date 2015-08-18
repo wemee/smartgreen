@@ -8,7 +8,10 @@
   <strong><%= @room.label %></strong>
 </h2>
 
-<canvas id="myChart" width="400" height="400"></canvas>
+<div class="row">
+	<canvas id="myChart" class="col-md-4" width="400" height="400"></canvas>
+	<canvas id="myChart1" class="col-md-4" width="400" height="400"></canvas>
+</div>
 
 <h3>學習</h3>
 <div class="btn-group btn-group-justified" role="group">
@@ -72,7 +75,6 @@
 
 <%= javascript_tag do %>
 	var ctx = document.getElementById("myChart").getContext("2d");
-
 	var data = {
 	    labels: ["學習", "環境", "節能", "Designing", "Coding", "Cycling", "Running"],
 	    datasets: [
@@ -89,4 +91,30 @@
 		]
 	};
 	var myRadarChart = new Chart(ctx).Radar(data);
+
+	var ctx1 = document.getElementById("myChart1").getContext("2d");
+	var data = {
+	    labels: ["8:00", "9:00", "10:00", "11:00", "12:00", "13:00", "14:00"],
+	    datasets: [
+	        {
+	            label: "My First dataset",
+	            fillColor: "rgba(220,220,220,0.5)",
+	            strokeColor: "rgba(220,220,220,0.8)",
+	            highlightFill: "rgba(220,220,220,0.75)",
+	            highlightStroke: "rgba(220,220,220,1)",
+	            data: [65, 59, 80, 81, 56, 55, 40]
+	        },
+	        {
+	            label: "My Second dataset",
+	            fillColor: "rgba(151,187,205,0.5)",
+	            strokeColor: "rgba(151,187,205,0.8)",
+	            highlightFill: "rgba(151,187,205,0.75)",
+	            highlightStroke: "rgba(151,187,205,1)",
+	            data: [28, 48, 40, 19, 86, 27, 90]
+	        }
+	    ]
+	};
+	var myBarChart = new Chart(ctx1).Bar(data, {
+	    legendTemplate : "<ul class=\"myChart1-legend\"><li><span style=\"background-color:red\">myChart1</span></li></ul>"
+	});
 <% end %>
