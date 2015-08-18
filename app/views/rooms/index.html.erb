@@ -4,7 +4,7 @@
   <% @rooms.each do |room| %>
     <div class="col-md-3">
       <%= link_to image_tag("classroom.png"), room %>
-      <p><%= room.label %></p>
+      <%= link_to room.label, room %>
     </div>
   <% end %>
 </div>
