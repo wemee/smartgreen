@@ -9,8 +9,30 @@
 </h2>
 
 <div class="row">
-	<canvas id="myChart" class="col-md-4" width="400" height="400"></canvas>
-	<canvas id="myChart1" class="col-md-4" width="400" height="400"></canvas>
+	<div class="col-md-6">
+    <canvas id="myChart" width="400" height="400"></canvas>
+    <p style="margin-left:180px;">當前參數</p>
+  </div>
+  <div class="col-md-6">
+    <canvas id="myRadar1" width="400" height="400"></canvas>
+    <p style="margin-left:180px;">最佳化參數</p>
+  </div>
+  <div class="col-md-6">
+    <canvas id="myChart1" width="400" height="400"></canvas>
+    <p style="margin-left:180px;">照度</p>
+  </div>
+  <div class="col-md-6">
+    <canvas id="myChart2" width="400" height="400"></canvas>
+    <p style="margin-left:180px;">濕度</p>
+  </div>
+  <div class="col-md-6">
+    <canvas id="myChart3" width="400" height="400"></canvas>
+    <p style="margin-left:180px;">二氧化碳度</p>
+  </div>
+  <div class="col-md-6">
+    <canvas id="myChart4" width="400" height="400"></canvas>
+    <p style="margin-left:180px;">溫度</p>
+  </div>
 </div>
 
 <h3>學習</h3>
@@ -72,6 +94,10 @@
 
 <br/><br/>
 <%= link_to "最佳化計算", @room, :class => "btn btn-primary btn-lg" %>
+<h4>建議照度：<%= rand(250..280)%></h4>
+<h4>建議濕度：<%= rand(60..80)%></h4>
+<h4>建議二氧化碳度：<%= rand(30..60)%></h4>
+<h4>建議溫度：<%= rand(25..28)%></h4>
 
 <%= javascript_tag do %>
 	var ctx = document.getElementById("myChart").getContext("2d");
@@ -92,29 +118,85 @@
 	};
 	var myRadarChart = new Chart(ctx).Radar(data);
 
+  var ctx = document.getElementById("myRadar1").getContext("2d");
+  var data = {
+      labels: ["學習", "環境", "節能", "Designing", "Coding", "Cycling", "Running"],
+      datasets: [
+          {
+              label: "My First dataset",
+              fillColor: "rgba(255,235,205,0.2)",
+              strokeColor: "rgba(25,25,112,1)",
+              pointColor: "rgba(255,0,0,1)",
+              pointStrokeColor: "#fff",
+              pointHighlightFill: "#fff",
+              pointHighlightStroke: "rgba(220,220,220,1)",
+              data: [Math.random()*10+1, Math.random()*10+1, Math.random()*10+1]
+          }
+    ]
+  };
+  var myRadarChart = new Chart(ctx).Radar(data);
+
 	var ctx1 = document.getElementById("myChart1").getContext("2d");
 	var data = {
 	    labels: ["8:00", "9:00", "10:00", "11:00", "12:00", "13:00", "14:00"],
 	    datasets: [
-	        {
-	            label: "My First dataset",
-	            fillColor: "rgba(220,220,220,0.5)",
-	            strokeColor: "rgba(220,220,220,0.8)",
-	            highlightFill: "rgba(220,220,220,0.75)",
-	            highlightStroke: "rgba(220,220,220,1)",
-	            data: [65, 59, 80, 81, 56, 55, 40]
-	        },
 	        {
 	            label: "My Second dataset",
 	            fillColor: "rgba(151,187,205,0.5)",
 	            strokeColor: "rgba(151,187,205,0.8)",
 	            highlightFill: "rgba(151,187,205,0.75)",
 	            highlightStroke: "rgba(151,187,205,1)",
-	            data: [28, 48, 40, 19, 86, 27, 90]
+	            data: [Math.random()*100+100, Math.random()*100+100, Math.random()*100+100, Math.random()*100+100, Math.random()*100+100, Math.random()*100+100, Math.random()*100+100]
 	        }
 	    ]
 	};
-	var myBarChart = new Chart(ctx1).Bar(data, {
-	    legendTemplate : "<ul class=\"myChart1-legend\"><li><span style=\"background-color:red\">myChart1</span></li></ul>"
-	});
+	var myBarChart = new Chart(ctx1).Line(data);
+
+  var ctx2 = document.getElementById("myChart2").getContext("2d");
+  var data = {
+      labels: ["8:00", "9:00", "10:00", "11:00", "12:00", "13:00", "14:00"],
+      datasets: [
+          {
+              label: "My Second dataset",
+              fillColor: "rgba(151,187,205,0.5)",
+              strokeColor: "rgba(151,187,205,0.8)",
+              highlightFill: "rgba(151,187,205,0.75)",
+              highlightStroke: "rgba(151,187,205,1)",
+              data: [Math.random()*10+20, Math.random()*10+20, Math.random()*10+20, Math.random()*10+20, Math.random()*10+20, Math.random()*10+20, Math.random()*10+20]
+          }
+      ]
+  };
+  var myBarChart = new Chart(ctx2).Line(data);
+
+  var ctx3 = document.getElementById("myChart3").getContext("2d");
+  var data = {
+      labels: ["8:00", "9:00", "10:00", "11:00", "12:00", "13:00", "14:00"],
+      datasets: [
+          {
+              label: "My Second dataset",
+              fillColor: "rgba(151,187,205,0.5)",
+              strokeColor: "rgba(151,187,205,0.8)",
+              highlightFill: "rgba(151,187,205,0.75)",
+              highlightStroke: "rgba(151,187,205,1)",
+              data: [Math.random()*10+20, Math.random()*10+20, Math.random()*10+20, Math.random()*10+20, Math.random()*10+20, Math.random()*10+20, Math.random()*10+20]
+          }
+      ]
+  };
+  var myBarChart = new Chart(ctx3).Line(data);
+
+  var ctx4 = document.getElementById("myChart4").getContext("2d");
+  var data = {
+      labels: ["8:00", "9:00", "10:00", "11:00", "12:00", "13:00", "14:00"],
+      datasets: [
+          {
+              label: "My Second dataset",
+              fillColor: "rgba(151,187,205,0.5)",
+              strokeColor: "rgba(151,187,205,0.8)",
+              highlightFill: "rgba(151,187,205,0.75)",
+              highlightStroke: "rgba(151,187,205,1)",
+              data: [Math.random()*10+20, Math.random()*10+20, Math.random()*10+20, Math.random()*10+20, Math.random()*10+20, Math.random()*10+20, Math.random()*10+20]
+          }
+      ]
+  };
+  var myBarChart = new Chart(ctx4).Line(data);
 <% end %>
