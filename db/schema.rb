@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150723052935) do
+ActiveRecord::Schema.define(version: 20150902080549) do
 
   create_table "ai_plug_logs", force: true do |t|
     t.integer  "sensor_id"
@@ -75,6 +75,17 @@ ActiveRecord::Schema.define(version: 20150723052935) do
   end
 
   add_index "leo_plug_logs", ["sensor_id"], name: "index_leo_plug_logs_on_sensor_id"
+
+  create_table "leo_plugs", force: true do |t|
+    t.string   "mac"
+    t.string   "school"
+    t.string   "brand"
+    t.string   "voltage"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "leo_plugs", ["school"], name: "index_leo_plugs_on_school"
 
   create_table "rooms", force: true do |t|
     t.string   "label"
