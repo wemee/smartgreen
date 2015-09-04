@@ -5,7 +5,7 @@ class LeoPlugLogsController < ApplicationController
 
   def index
     @leo_plug_logs = LeoPlugLog.all
-    respond_with(@leo_plug_logs)
+    # respond_with(@leo_plug_logs)
   end
 
   def show
