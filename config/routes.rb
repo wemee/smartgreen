@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :leo_plugs
+
   resources :leo_plug_logs
 
   devise_for :users

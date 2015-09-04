@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Mac:</strong>
+  <%= @leo_plug.mac %>
+</p>
+
+<p>
+  <strong>School:</strong>
+  <%= @leo_plug.school %>
+</p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @leo_plug.brand %>
+</p>
+
+<p>
+  <strong>Voltage:</strong>
+  <%= @leo_plug.voltage %>
+</p>
+
+<%= link_to 'Edit', edit_leo_plug_path(@leo_plug) %> |
+<%= link_to 'Back', leo_plugs_path %>

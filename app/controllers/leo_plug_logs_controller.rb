@@ -9,7 +9,7 @@ class LeoPlugLogsController < ApplicationController
   end
 
   def show
-    respond_with(@leo_plug_log)
+    # respond_with(@leo_plug_log)
   end
 
   def new

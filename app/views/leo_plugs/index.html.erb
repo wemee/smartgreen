@@ -1,0 +1,31 @@
+<h1>Listing leo_plugs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Mac</th>
+      <th>School</th>
+      <th>Brand</th>
+      <th>Voltage</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @leo_plugs.each do |leo_plug| %>
+      <tr>
+        <td><%= leo_plug.mac %></td>
+        <td><%= leo_plug.school %></td>
+        <td><%= leo_plug.brand %></td>
+        <td><%= leo_plug.voltage %></td>
+        <td><%= link_to 'Show', leo_plug %></td>
+        <td><%= link_to 'Edit', edit_leo_plug_path(leo_plug) %></td>
+        <td><%= link_to 'Destroy', leo_plug, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Leo plug', new_leo_plug_path %>

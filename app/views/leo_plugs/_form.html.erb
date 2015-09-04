@@ -1,0 +1,33 @@
+<%= form_for(@leo_plug) do |f| %>
+  <% if @leo_plug.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@leo_plug.errors.count, "error") %> prohibited this leo_plug from being saved:</h2>
+
+      <ul>
+      <% @leo_plug.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :mac %><br>
+    <%= f.text_field :mac %>
+  </div>
+  <div class="field">
+    <%= f.label :school %><br>
+    <%= f.text_field :school %>
+  </div>
+  <div class="field">
+    <%= f.label :brand %><br>
+    <%= f.text_field :brand %>
+  </div>
+  <div class="field">
+    <%= f.label :voltage %><br>
+    <%= f.text_field :voltage %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
