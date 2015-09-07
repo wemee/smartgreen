@@ -19,6 +19,6 @@
 
 # Learn more: http://github.com/javan/whenever
 
-every '* * * * *' do
+every '5,20,35,50 * * * *' do
   rake "crawler:nccu"
 end
