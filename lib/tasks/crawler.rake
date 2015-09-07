@@ -8,7 +8,7 @@ namespace :crawler do
   task nccu: :environment do ||
     result = JSON.parse(open("http://140.119.98.20:8080/nccu/Servlet?type=1").read)
 
-    dt = DateTime.strptime(result["timestamp"],'%s')
+    dt = DateTime.strptime(result["timestamp"],'%s') + 8.hour
 
     TemperatureLog.create(sensor:Sensor.find(6), value:result["temp1"], date_time:dt)
     TemperatureLog.create(sensor:Sensor.find(7), value:result["temp2"], date_time:dt)
