@@ -43,3 +43,5 @@ gem 'rails_admin'
 gem 'devise'
 gem 'cancan'
 gem 'rails-i18n'
+
+gem 'whenever', :require => false
