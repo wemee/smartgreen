@@ -1,27 +1,36 @@
 <h1>Listing schools</h1>
 
-<table>
+<div class="row">
+  <% @schools.each do |school| %>
+    <div class="col-md-3">
+      <%= link_to image_tag("school.png", "class" =>"img-responsive"), school %>
+      <%= link_to school.name, school %>
+    </div>
+  <% end %>
+</div>
+
+<!-- <table>
   <thead>
     <tr>
       <th>Name</th>
       <th>Address</th>
       <th colspan="3"></th>
     </tr>
-  </thead>
+  </thead> -->
 
-  <tbody>
-    <% @schools.each do |school| %>
-      <tr>
-        <td><%= school.name %></td>
-        <td><%= school.address %></td>
-        <td><%= link_to 'Show', school %></td>
-        <td><%= link_to 'Edit', edit_school_path(school) %></td>
-        <td><%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <!-- <tbody> -->
+    <%# @schools.each do |school| %>
+<!--       <tr>
+        <td><%#= school.name %></td> -->
+        <!-- <td><%#= school.address %></td> -->
+        <!-- <td><%#= link_to 'Show', school %></td> -->
+        <!-- <td><%#= link_to 'Edit', edit_school_path(school) %></td> -->
+        <!-- <td><%#= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+      <!-- </tr> -->
+    <%# end %>
+<!--   </tbody>
+</table> -->
 
 <br>
 
-<%= link_to 'New School', new_school_path %>
+<%#= link_to 'New School', new_school_path %>

@@ -32,7 +32,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  root 'welcome#index'
+  root 'schools#index'
   post '/', :to => 'welcome#login'
   
   # Example of regular route:
