@@ -14,7 +14,38 @@
 <h1><%= @school.name %></h1>
 <h2>用電情況</h2>
 <div class="row">
-	<div class="col-md-6">
+	<% @plugs.each do |plug| %>
+		<div class="col-md-6">
+			<h3><%= plug[:device] %></h3>
+			<canvas id='<%= "myChart_#{plug[:device]}" %>' width="400" height="400"></canvas>
+			<p style="margin-left:180px;">耗電量，單位瓦特(W)</p>
+<!-- 			<p>目前耗電量：<%#= plug[:data][-1] %>W</p>
+			<p>最後開關時間：<%#= (Time.now - rand(3).day - rand(12).hour - rand(30.minutes)).strftime('%y-%m-%d %H:%M') %></p>
+			<p>今日開機時間：9H28M</p>
+			<p>總開機時間：13D8H</p>
+			<p>當前狀態：ON</p> -->
+		</div>
+		<%#= javascript_tag do %>
+		<script type="text/javascript">
+		  var ctx2 = document.getElementById('<%= "myChart_#{plug[:device]}" %>').getContext("2d");
+		  var data = {
+		      labels: <%= "#{plug[:labels]}".html_safe %>,
+		      datasets: [
+		          {
+		              label: "My Second dataset",
+		              fillColor: "rgba(151,187,205,0.5)",
+		              strokeColor: "rgba(151,187,205,0.8)",
+		              highlightFill: "rgba(151,187,205,0.75)",
+		              highlightStroke: "rgba(151,187,205,1)",
+		              data: <%= "#{plug[:data]}".html_safe %>
+		          }
+		      ]
+		  };
+		  var myLineChart = new Chart(ctx2).Line(data);
+		</script>
+		<%# end %>
+	<% end %>
+	<!-- <div class="col-md-6">
 		<h3><%= ["飲水機","燈光控制","冷氣機","電風扇"].sample %></h3>
 		<canvas id="myChart1" width="400" height="400"></canvas>
 		<p style="margin-left:180px;">耗電量</p>
@@ -56,10 +87,16 @@
 		<p>今日開機時間：9H28M</p>
 		<p>總開機時間：13D8H</p>
 		<p>當前狀態：ON</p>
-	</div>
+	</div> -->
 </div>
 
-<%= javascript_tag do %>
+<%#= javascript_tag do %>
+
+<%# end %>
+
+<%= link_to '返回', schools_path %>
+
+<%#
   var ctx2 = document.getElementById("myChart1").getContext("2d");
   var data = {
       labels: ["8:00", "9:00", "10:00", "11:00", "12:00", "13:00", "14:00"],
@@ -123,6 +160,4 @@
       ]
   };
   var myLineChart = new Chart(ctx2).Line(data);
-<% end %>
-
-<%= link_to '返回', schools_path %>
+%>

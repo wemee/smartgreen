@@ -10,6 +10,124 @@ class SchoolsController < ApplicationController
   # GET /schools/1
   # GET /schools/1.json
   def show
+    labels = []
+    now = Time.now #.strftime('%H:%M')
+    degree = 20
+    degree.times {|t|
+      labels << (now - (degree-t).minutes).strftime('%H:%M')
+    }
+
+    case @school.id
+    when 5 #河堤國小
+      @plugs = []
+      
+      3.times {|i|
+        data = []
+        degree.times {|i|
+          data << (30+rand(10))
+        }
+        @plugs << {device:"燈光#{i+1}", labels:labels, data:data}
+      }
+
+      3.times {|i|
+        data = []
+        degree.times {|i|
+          data << (20+rand(10))
+        }
+        @plugs << {device:"風扇#{i+1}", labels:labels, data:data}
+      }
+
+      2.times {|i|
+        data = []
+        degree.times {|i|
+          data << (10+rand(10))
+        }
+        @plugs << {device:"平板充電車#{i+1}", labels:labels, data:data}
+      }
+
+      # data = []
+      # degree.times {|i|
+      #   data << (30+rand(10))
+      # }
+      # @plugs << {device:"燈光1", labels:labels, data:data}
+
+      # data = []
+      # degree.times {|i|
+      #   data << (30+rand(10))
+      # }
+      # @plugs << {device:"燈光2", labels:labels, data:data}
+
+
+      # data = []
+      # degree.times {|i|
+      #   data << (20+rand(10))
+      # }
+      # @plugs << {device:"風扇1", labels:labels, data:data}
+      # data = []
+      # degree.times {|i|
+      #   data << (20+rand(10))
+      # }
+      # @plugs << {device:"風扇2", labels:labels, data:data}
+
+      # data = []
+      # degree.times {|i|
+      #   data << (10+rand(10))
+      # }
+      # @plugs << {device:"平板充電車1", labels:labels, data:data}
+      # data = []
+      # degree.times {|i|
+      #   data << (10+rand(10))
+      # }
+      # @plugs << {device:"平板充電車2", labels:labels, data:data}
+
+
+      # data = []
+      # degree.times {|i|
+      #   data << (30+rand(10))
+      # }
+      # @plugs << {device:"燈光3", labels:labels, data:data}
+      # data = []
+      # degree.times {|i|
+      #   data << (20+rand(10))
+      # }
+      # @plugs << {device:"風扇/冷氣", labels:labels, data:data}
+
+    when 4 #和平高中
+      @plugs = []
+      10.times {|i|
+        data = []
+        degree.times {|i|
+          data << (30+rand(10))
+        }
+        @plugs << {device:"燈光#{i+1}", labels:labels, data:data}
+      }
+    when 3 #名間國中
+      @plugs = []
+
+      8.times {|i|
+        data = []
+        degree.times {|i|
+          data << (30+rand(10))
+        }
+        @plugs << {device:"燈光#{i+1}", labels:labels, data:data}
+      }
+
+      8.times {|i|
+        data = []
+        degree.times {|i|
+          data << (20+rand(10))
+        }
+        @plugs << {device:"風扇#{i+1}", labels:labels, data:data}
+      }
+
+      7.times {|i|
+        data = []
+        degree.times {|i|
+          data << (10+rand(10))
+        }
+        @plugs << {device:"平板充電車#{i+1}", labels:labels, data:data}
+      }
+    end
   end
 
   # GET /schools/new
