@@ -12,6 +12,8 @@
  -->
 <!-- <%= link_to 'Edit', edit_school_path(@school) %> | -->
 <h1><%= @school.name %></h1>
+
+<% if [3..5].include? @school.id %>
 <h2>用電情況</h2>
 <div class="row">
 	<% @plugs.each do |plug| %>
@@ -89,6 +91,7 @@
 		<p>當前狀態：ON</p>
 	</div> -->
 </div>
+<% end %>
 
 <%#= javascript_tag do %>
 
