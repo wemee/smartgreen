@@ -23,24 +23,27 @@ class SchoolsController < ApplicationController
       
       3.times {|i|
         data = []
+        base = 28 + rand(5)
         degree.times {|i|
-          data << (30+rand()/10)
+          data << (base + rand()/10)
         }
         @plugs << {device:"燈光#{i+1}", labels:labels, data:data}
       }
 
       3.times {|i|
         data = []
+        base = 28 + rand(5)
         degree.times {|i|
-          data << (20+rand()/10)
+          data << (base + rand()/10)
         }
         @plugs << {device:"風扇#{i+1}", labels:labels, data:data}
       }
 
       2.times {|i|
         data = []
+        base = 28 + rand(5)
         degree.times {|i|
-          data << (10+rand()/10)
+          data << (base + rand()/10)
         }
         @plugs << {device:"平板充電車#{i+1}", labels:labels, data:data}
       }
@@ -49,8 +52,9 @@ class SchoolsController < ApplicationController
       @plugs = []
       10.times {|i|
         data = []
+        base = 28 + rand(5)
         degree.times {|i|
-          data << (30+rand()/10)
+          data << (base + rand()/10)
         }
         @plugs << {device:"燈光#{i+1}", labels:labels, data:data}
       }
@@ -59,24 +63,27 @@ class SchoolsController < ApplicationController
 
       8.times {|i|
         data = []
+        base = 28 + rand(5)
         degree.times {|i|
-          data << (30+rand()/10)
+          data << (base + rand()/10)
         }
         @plugs << {device:"燈光#{i+1}", labels:labels, data:data}
       }
 
       8.times {|i|
         data = []
+        base = 28 + rand(5)
         degree.times {|i|
-          data << (20+rand()/10)
+          data << (base + rand()/10)
         }
         @plugs << {device:"風扇#{i+1}", labels:labels, data:data}
       }
 
       7.times {|i|
         data = []
+        base = 28 + rand(5)
         degree.times {|i|
-          data << (10+rand()/10)
+          data << (base + rand()/10)
         }
         @plugs << {device:"平板充電車#{i+1}", labels:labels, data:data}
       }
