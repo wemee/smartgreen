@@ -24,7 +24,7 @@ class SchoolsController < ApplicationController
       3.times {|i|
         data = []
         degree.times {|i|
-          data << (30+rand(3))
+          data << (30+rand()/10)
         }
         @plugs << {device:"燈光#{i+1}", labels:labels, data:data}
       }
@@ -32,7 +32,7 @@ class SchoolsController < ApplicationController
       3.times {|i|
         data = []
         degree.times {|i|
-          data << (20+rand(3))
+          data << (20+rand()/10)
         }
         @plugs << {device:"風扇#{i+1}", labels:labels, data:data}
       }
@@ -40,7 +40,7 @@ class SchoolsController < ApplicationController
       2.times {|i|
         data = []
         degree.times {|i|
-          data << (10+rand(3))
+          data << (10+rand()/10)
         }
         @plugs << {device:"平板充電車#{i+1}", labels:labels, data:data}
       }
@@ -50,7 +50,7 @@ class SchoolsController < ApplicationController
       10.times {|i|
         data = []
         degree.times {|i|
-          data << (30+rand(3))
+          data << (30+rand()/10)
         }
         @plugs << {device:"燈光#{i+1}", labels:labels, data:data}
       }
@@ -60,7 +60,7 @@ class SchoolsController < ApplicationController
       8.times {|i|
         data = []
         degree.times {|i|
-          data << (30+rand(3))
+          data << (30+rand()/10)
         }
         @plugs << {device:"燈光#{i+1}", labels:labels, data:data}
       }
@@ -68,7 +68,7 @@ class SchoolsController < ApplicationController
       8.times {|i|
         data = []
         degree.times {|i|
-          data << (20+rand(3))
+          data << (20+rand()/10)
         }
         @plugs << {device:"風扇#{i+1}", labels:labels, data:data}
       }
@@ -76,7 +76,7 @@ class SchoolsController < ApplicationController
       7.times {|i|
         data = []
         degree.times {|i|
-          data << (10+rand(3))
+          data << (10+rand()/10)
         }
         @plugs << {device:"平板充電車#{i+1}", labels:labels, data:data}
       }
