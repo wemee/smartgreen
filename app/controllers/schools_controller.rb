@@ -127,6 +127,8 @@ class SchoolsController < ApplicationController
         }
         @plugs << {device:"平板充電車#{i+1}", labels:labels, data:data}
       }
+    else #政大附中
+      
     end
   end
 
