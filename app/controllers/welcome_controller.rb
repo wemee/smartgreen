@@ -3,6 +3,8 @@ class WelcomeController < ApplicationController
   	end
 
   	def login
+  		cookies[:email] = params[:email]
+  		cookies[:password] = params[:password]
   		if params[:email] == "admin" && params[:password] == "123456"
   			redirect_to schools_url
   		else
